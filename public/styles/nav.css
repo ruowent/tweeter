@@ -9,4 +9,6 @@ nav {
 nav span {
   margin: 1.5em;
   font-family: Bungee, sans-serif;
+  font-size: 40px;
+  align-items: center;
 }
