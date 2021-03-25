@@ -1,5 +1,6 @@
-header {
+header#main-header {
   display: flex;
+  margin-top: 120px;
   height: 400px;
   width: 100%;
   flex-direction: column;

@@ -30,7 +30,7 @@
     <nav>
       <span>tweeter</span>
     </nav>
-    <header>
+    <header id="main-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -53,16 +53,20 @@
         </form>
       </section>  
           <!--app.js renders the data for the tweet bodies here-->  
-      <section id="tweets-list">
+      <section id="tweets-container">
 
         <article class="tweet">
-          <div class="header">
-            <img src="https://i.imgur.com/73hZDYK.png"><h4>Rhoda Jacobs</h4>
+          <header>
+            <div>
+              <img src="https://i.imgur.com/73hZDYK.png"><label>Rhoda Jacobs</label>
+            </div>
             <span>@SirIsaac</span>
-          </div>
+          </header>
+
           <p>If I have seen further it is by standing on the shoulders of giants</p>
+
           <footer>
-            <div class="visible">10 days ago</div><div class="icons">icons</div>
+            <div class="date">10 days ago</div><div class="icons">icons</div>
           </footer>
         </article>
       </section>  
