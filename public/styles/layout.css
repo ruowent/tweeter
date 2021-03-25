@@ -31,14 +31,11 @@ main {
   align-items: center;
   justify-content: center;
 
-    /* Center vertically and horizontally */
-    position: absolute;
+  /* Center vertically and horizontally */
+  position: absolute;
 
-    left: 5%;
-    right: 5%;
-
-}
-
-h3 {
+  left: 5%;
+  right: 5%;
 
 }
+

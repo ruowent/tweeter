@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -38,11 +40,17 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-    <h3>test</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus proin nibh nisl condimentum id venenatis a condimentum. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Mauris augue neque gravida in fermentum et sollicitudin. Quis auctor elit sed vulputate. Faucibus turpis in eu mi. Consectetur a erat nam at lectus urna duis convallis. Morbi tristique senectus et netus et malesuada fames. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper. Aliquet porttitor lacus luctus accumsan tortor posuere.</p>
-    <h4>Name</h4>
-    <p>
-      Adipiscing elit duis tristique sollicitudin. Et tortor at risus viverra adipiscing at. Viverra adipiscing at in tellus integer feugiat scelerisque. Tincidunt lobortis feugiat vivamus at. Arcu vitae elementum curabitur vitae. Vitae congue mauris rhoncus aenean. Fringilla phasellus faucibus scelerisque eleifend. Tincidunt dui ut ornare lectus sit amet est. Accumsan sit amet nulla facilisi. Urna nec tincidunt praesent semper. Viverra adipiscing at in tellus integer feugiat. Diam quam nulla porttitor massa id. Eu nisl nunc mi ipsum faucibus vitae aliquet nec. Tellus at urna condimentum mattis pellentesque id nibh. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Placerat vestibulum lectus mauris ultrices eros.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>      
     </main>
   </body>
 </html>
