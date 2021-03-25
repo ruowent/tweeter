@@ -7,8 +7,8 @@
 }
 
 .new-tweet h2 {
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.5em;
+  margin: 15px 0;
 }
 
 .new-tweet textarea {
@@ -19,10 +19,14 @@
   height: 30px;
   width: 100%;
 }
+
 main section output {
   margin-top: 2%;
-  text-align: right;
-  
+  float: right;
+}
+
+main section output.negative {
+  color: red; 
 }
 
 button {
@@ -38,5 +42,3 @@ button {
 button:hover {
   background: green
 }
-
-
