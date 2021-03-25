@@ -3,11 +3,14 @@ nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
-  width: 100%;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 nav span {
   margin: 1.5em;
   font-family: Bungee, sans-serif;
   font-size: 40px;
+  line-height: 1em;
 }
