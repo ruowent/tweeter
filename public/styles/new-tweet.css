@@ -5,9 +5,8 @@ main.container > section{
   flex-direction: column;
 }
 
-.new-tweet h2 {
-  font-size: 1.5em;
-  margin: 15px 0;
+form {
+  margin-top: 1em;
 }
 
 .new-tweet textarea {
@@ -15,7 +14,7 @@ main.container > section{
   outline: 0;
   background: transparent;
   border-bottom: 3px solid black;
-  height: 30px;
+  height: 2.5em;
   width: 100%;
 }
 
@@ -34,10 +33,10 @@ button {
   color: #FFFFFF;
   font-family: Bungee, sans-serif;
   font-size: 20px;
-  transition: 1s;
+  transition: .5s;
   cursor: pointer;
 }
 
 button:hover {
-  background: darkblue;
+  box-shadow: 0 0 0 3px dodgerblue;
 }

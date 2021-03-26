@@ -1,10 +1,12 @@
+// Create dynamic HTML code for the tweets and return the content
 const createTweetElement = function(data) {
+  const $article = $('<article>', {
+    class: 'tweet'
+  });
 
-  const $article = $('<article>');
+  const $header = $('<header>').appendTo($article);
 
-  const $div = $('<div>', {
-    class: 'header'
-  }).appendTo($article);
+  const $div = $('<div>').appendTo($header);
 
   $('<img>', {
     attr: { 
@@ -12,19 +14,19 @@ const createTweetElement = function(data) {
       alt: 'avatar' }
   }).appendTo($div);
 
-  $('<h4>', {
+  $('<label>', {
     text: data.user.name
   }).appendTo($div);
 
   $('<span>', {
     text: data.user.handle
-  }).appendTo($div);
+  }).appendTo($header);
 
   const $p = $('<p>', {
     text: data.content.text
   }).appendTo($article);
 
-  const $footer = $('<footer>');
+  const $footer = $('<footer>').appendTo($article);
   
   $('<div>', {
     class: 'date',
@@ -50,26 +52,56 @@ const createTweetElement = function(data) {
     //   attr: { 'aria-hidden': 'true' }
     // }).appendTo($div);
 
-
   return $article;
+};
 
+// loop through tweets, call createTweetElement then return value and append it to the tweets container
+const renderTweets = function(tweets) {
+  for (let tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet);
+  }
+};
+
+// use AJAX GET request to preload tweets
+const loadTweets = function() {
+  $.ajax({
+    url:'/tweets',
+    method: 'get',
+    dataType: 'json'
+  })
+  .then(function(res){
+    renderTweets(res);
+  })
+  .catch(function(err, xhr) {
+    console.log(err, xhr);
+  });
 }
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
+function resetForm(form) {
+  form.trigger('reset');
+  form.parent().find('output.counter').text(140);
 }
 
-const $tweet = createTweetElement(tweetData);
+// After html code is fully loaded, call functions to load the tweets and submit new tweets
+$(document).ready(() => {
+  // Preload tweets
+  loadTweets();
+  
+  // Post action after submit button is clicked
+  $('section.new-tweet button[type=submit]').on('click', (event) => {
+    event.preventDefault();
+    const form = $(event.target).parent().parent();
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    $.ajax({
+      url: '/tweets',
+      method: 'post',
+      data: form.serialize()
+    })
+    .then(res => {
+      loadTweets(res);
+      resetForm(form);
+    })
+    .catch(err => console.log(err))
+  })
+});
