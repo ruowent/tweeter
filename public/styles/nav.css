@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  justify-content: space-between;
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -14,3 +15,25 @@ nav span {
   font-size: 40px;
   line-height: 1em;
 }
+
+nav div {
+  display: flex;
+  flex-flow: column;
+}
+
+nav div p {
+  align-items: flex-end;
+  font-size: .7em;
+  padding: 0.5em;
+}
+
+div p strong {
+  font-weight: bold;
+  font-style: italic;
+}
+
+nav div i {
+  align-self: center;
+  color: #DE5039;
+  font-size: 1em;
+  padding: 0.1em; }

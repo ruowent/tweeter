@@ -30,36 +30,35 @@ const createTweetElement = (data) => {
   
   $('<div>', {
     class: 'date',
-    text: Date(data.created_at * 1000).substr(0, 25)
+    text: moment(moment(data.created_at).format()).fromNow()
   }).appendTo($footer);
+
+
     
-  $('<div>', {
+  const $divIcons = $('<div>', {
     class: 'icons' 
   }).appendTo($footer);
       
-    // $('<i>', {
-    //   class: 'fa fa-flag',
-    //   attr: { 'aria-hidden': 'true' }
-    // }).appendTo($div);
-      
-    // $('<i>', {
-    //   class: 'fa fa-retweet',
-    //   attr: { 'aria-hidden': 'true' }
-    // }).appendTo($div);
+  $('<i>', {
+    class: 'fas fa-flag',
+  }).appendTo($divIcons);
     
-    // $('<i>',{
-    //   class: ( data.likes === 0 ) ? "fa fa-heart-o" : "fa fa-heart",
-    //   attr: { 'aria-hidden': 'true' }
-    // }).appendTo($div);
+  $('<i>', {
+    class: 'fas fa-retweet',
+  }).appendTo($divIcons);
+  
+  $('<i>',{
+    class: 'fas fa-heart',
+  }).appendTo($divIcons);
 
   return $article;
 };
 
-// loop through tweets, call createTweetElement then return value and append it to the tweets container
+// loop through tweets, call createTweetElement then return value and prepend to the tweets container
 const renderTweets = (tweets) => {
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 };
 
@@ -80,6 +79,7 @@ const loadTweets = () => {
 
 // Clear user input and reset letter counter after clicking button
 const resetForm = (form) => {
+  clearError();
   form.trigger('reset');
   form.parent().find('output.counter').text(140);
 };
@@ -90,11 +90,34 @@ const validateForm = (form) => {
   const counter = Number($(form).find('output.counter').text());
 
   if (counter < 0) {
-    return 'Tweet is over 140 characters.'
+    return '⚠️  Tweet is over 140 characters  ⚠️ '
   } else if (!textarea.val()) {
-    return 'Tweet is empty.'
+    return '⚠️  Tweet is empty  ⚠️ '
   }
 };
+
+// Display error message
+const displayError = (error) => {
+  $('.hidden-error').slideUp('slow', () => {  
+    const $errMsg = $('.error-container p');
+    const style = {
+      color: 'red',
+      border: 'solid',
+      padding: '.5em',
+    }
+
+    $errMsg.text(error);
+    $errMsg.css(style);
+
+    $('.hidden-error').slideDown();
+  });
+};
+
+// Clear error section
+const clearError = () => {
+  $('.hidden-error').slideUp();
+};
+
 
 // After html code is fully loaded, call functions to load the tweets and submit new tweets
 $(document).ready(() => {
@@ -108,7 +131,7 @@ $(document).ready(() => {
     const error = validateForm(form);
 
     if (error) {
-      return alert(error);
+      return displayError(error);
     }
 
     $.ajax({
