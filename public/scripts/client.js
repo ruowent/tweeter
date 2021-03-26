@@ -1,5 +1,5 @@
 // Create dynamic HTML code for the tweets and return the content
-const createTweetElement = function(data) {
+const createTweetElement = (data) => {
   const $article = $('<article>', {
     class: 'tweet'
   });
@@ -56,7 +56,7 @@ const createTweetElement = function(data) {
 };
 
 // loop through tweets, call createTweetElement then return value and append it to the tweets container
-const renderTweets = function(tweets) {
+const renderTweets = (tweets) => {
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
@@ -64,7 +64,7 @@ const renderTweets = function(tweets) {
 };
 
 // use AJAX GET request to preload tweets
-const loadTweets = function() {
+const loadTweets = () => {
   $.ajax({
     url:'/tweets',
     method: 'get',
@@ -78,10 +78,23 @@ const loadTweets = function() {
   });
 }
 
-function resetForm(form) {
+// Clear user input and reset letter counter after clicking button
+const resetForm = (form) => {
   form.trigger('reset');
   form.parent().find('output.counter').text(140);
-}
+};
+
+// Validate form data and return error message
+const validateForm = (form) => {
+  const textarea = $(form).find('textarea');
+  const counter = Number($(form).find('output.counter').text());
+
+  if (counter < 0) {
+    return 'Tweet is over 140 characters.'
+  } else if (!textarea.val()) {
+    return 'Tweet is empty.'
+  }
+};
 
 // After html code is fully loaded, call functions to load the tweets and submit new tweets
 $(document).ready(() => {
@@ -92,6 +105,11 @@ $(document).ready(() => {
   $('section.new-tweet button[type=submit]').on('click', (event) => {
     event.preventDefault();
     const form = $(event.target).parent().parent();
+    const error = validateForm(form);
+
+    if (error) {
+      return alert(error);
+    }
 
     $.ajax({
       url: '/tweets',
