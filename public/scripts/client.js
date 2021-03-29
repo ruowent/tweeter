@@ -33,8 +33,6 @@ const createTweetElement = (data) => {
     text: moment(moment(data.created_at).format()).fromNow()
   }).appendTo($footer);
 
-
-    
   const $divIcons = $('<div>', {
     class: 'icons' 
   }).appendTo($footer);

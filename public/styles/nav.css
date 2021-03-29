@@ -1,12 +1,18 @@
 nav {
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  min-width: 350px;
   height: 120px;
-  background-color: #4056A1;
+  padding: 1.5em;
   color: #FFFFFF;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  background-color: #4056A1;
 }
 
 nav span {
@@ -37,3 +43,4 @@ nav div i {
   color: #DE5039;
   font-size: 1em;
   padding: 0.1em; }
+
