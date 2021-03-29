@@ -1,4 +1,4 @@
-/* Width of tweet sections */
+/* tweet sections */
 main.container > section{
   margin: auto;
   width: 90%; 
@@ -6,10 +6,12 @@ main.container > section{
   flex-direction: column;
 }
 
+/* user input form */
 form {
   margin-top: 1em;
 }
 
+/* user input textbox */
 .new-tweet textarea {
   border: 0;
   outline: 0;
@@ -19,15 +21,18 @@ form {
   width: 100%;
 }
 
+/* character counter */
 main section output {
   margin-top: 2%;
   float: right;
 }
 
+/* counter displays in red when value is negative */
 main section output.negative {
   color: red; 
 }
 
+/* submit button */
 button {
   margin-top: 2%;
   background-color: #4056A1;
@@ -38,6 +43,7 @@ button {
   cursor: pointer;
 }
 
+/* button hover outline */
 button:hover {
   box-shadow: 0 0 0 3px dodgerblue;
 }

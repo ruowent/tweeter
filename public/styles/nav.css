@@ -1,3 +1,4 @@
+/* nav bar */
 nav {
   display: flex;
   flex-flow: row;
@@ -15,6 +16,7 @@ nav {
   background-color: #4056A1;
 }
 
+/* Tweeter name display */
 nav span {
   margin: 1.5em;
   font-family: Bungee, sans-serif;
@@ -27,6 +29,7 @@ nav div {
   flex-flow: column;
 }
 
+/* Write a new tweet section */
 nav div p {
   align-items: flex-end;
   font-size: .7em;
@@ -38,11 +41,13 @@ div p strong {
   font-style: italic;
 }
 
+/* arrow icon */
 nav div i {
   align-self: center;
   color: #DE5039;
   font-size: 1em;
-  padding: 0.1em; }
+  padding: 0.1em;
+}
 
 /* Tablet Size */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
