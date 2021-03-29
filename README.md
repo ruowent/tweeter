@@ -22,7 +22,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 #### Tablet mode
-!["screenshot of the main tablet page"](https://github.com/ruowent/tweeter/blob/main/image/desktop%20main.png?raw=true)
+!["screenshot of the main tablet page"](https://github.com/ruowent/tweeter/blob/main/image/tablet%20mode.png)
 
 #### Desktop mode
 !["screenshot of the main desktop page"](https://github.com/ruowent/tweeter/blob/main/image/desktop%20main.png?raw=true)
