@@ -9,8 +9,8 @@ const createTweetElement = (data) => {
   const $div = $('<div>').appendTo($header);
 
   $('<img>', {
-    attr: { 
-      src: data.user.avatars, 
+    attr: {
+      src: data.user.avatars,
       alt: 'avatar' }
   }).appendTo($div);
 
@@ -22,7 +22,7 @@ const createTweetElement = (data) => {
     text: data.user.handle
   }).appendTo($header);
 
-  const $p = $('<p>', {
+  $('<p>', {
     text: data.content.text
   }).appendTo($article);
 
@@ -34,7 +34,7 @@ const createTweetElement = (data) => {
   }).appendTo($footer);
 
   const $divIcons = $('<div>', {
-    class: 'icons' 
+    class: 'icons'
   }).appendTo($footer);
       
   $('<i>', {
@@ -67,13 +67,13 @@ const loadTweets = () => {
     method: 'get',
     dataType: 'json'
   })
-  .then(function(res){
-    renderTweets(res);
-  })
-  .catch(function(err, xhr) {
-    console.log(err, xhr);
-  });
-}
+    .then(function(res) {
+      renderTweets(res);
+    })
+    .catch(function(err, xhr) {
+      console.log(err, xhr);
+    });
+};
 
 // Clear user input and reset letter counter after clicking button
 const resetForm = (form) => {
@@ -88,21 +88,21 @@ const validateForm = (form) => {
   const counter = Number($(form).find('output.counter').text());
 
   if (counter < 0) {
-    return '⚠️  Tweet is over 140 characters  ⚠️ '
+    return '⚠️  Tweet is over 140 characters  ⚠️ ';
   } else if (!textarea.val()) {
-    return '⚠️  Tweet is empty  ⚠️ '
+    return '⚠️  Tweet is empty  ⚠️ ';
   }
 };
 
 // Display error message
 const displayError = (error) => {
-  $('.hidden-error').slideUp('slow', () => {  
+  $('.hidden-error').slideUp('slow', () => {
     const $errMsg = $('.error-container p');
     const style = {
       color: 'red',
       border: 'solid',
       padding: '.5em',
-    }
+    };
 
     $errMsg.text(error);
     $errMsg.css(style);
@@ -122,13 +122,13 @@ $(document).ready(() => {
   loadTweets();
 
   // When down arrow on the nav bar is clicked, show or hide new tweet section
-  $('#compose a').on('click', function(e) {
+  $('#compose a').on('click', function() {
     const newTweet = $('section.new-tweet');
     const textarea = newTweet.find('textarea');
-    newTweet.slideToggle('slow', function(){
+    newTweet.slideToggle('slow', function() {
       textarea.focus();
     });
-  })
+  });
 
   // Post action after submit button is clicked
   $('section.new-tweet button[type=submit]').on('click', (event) => {
@@ -145,10 +145,10 @@ $(document).ready(() => {
       method: 'post',
       data: form.serialize()
     })
-    .then(res => {
-      loadTweets(res);
-      resetForm(form);
-    })
-    .catch(err => console.log(err))
-  })
+      .then(res => {
+        loadTweets(res);
+        resetForm(form);
+      })
+      .catch(err => console.log(err));
+  });
 });

@@ -1,4 +1,4 @@
-$(document).ready( () => {
+$(document).ready(() => {
 
   // Detects keyup event then calculate the remaining characters. Add a css class on counter when exceeding the length
   $('section.new-tweet textarea').on('keyup', function() {
@@ -9,8 +9,8 @@ $(document).ready( () => {
     if (maxLength - inputLength < 0) {
       counter.addClass('negative');
     } else {
-      counter.removeClass('negative');  
+      counter.removeClass('negative');
     }
-    counter.text(maxLength - inputLength); 
+    counter.text(maxLength - inputLength);
   });
-})
+});
