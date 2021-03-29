@@ -22,19 +22,19 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 #### Tablet mode
-!["screenshot of the main tablet page"](https://github.com/ruowent/tweeter/blob/master/image/tablet%20mode.png?raw=true)
+!["screenshot of the main tablet page"](https://github.com/ruowent/tweeter/blob/main/image/desktop%20main.png?raw=true)
 
 #### Desktop mode
-!["screenshot of the main desktop page"](https://github.com/ruowent/tweeter/blob/master/image/desktop%20main.png?raw=true)
+!["screenshot of the main desktop page"](https://github.com/ruowent/tweeter/blob/main/image/desktop%20main.png?raw=true)
 
 #### User input
-!["screenshot of user input"](https://github.com/ruowent/tweeter/blob/master/image/user%20input.png)
+!["screenshot of user input"](https://github.com/ruowent/tweeter/blob/main/image/user%20input.png)
 
 #### Error message - empty tweet
-!["screenshot of empty tweet error message"](https://github.com/ruowent/tweeter/blob/master/image/err%20empty%20message.png)
+!["screenshot of empty tweet error message"](https://github.com/ruowent/tweeter/blob/main/image/err%20empty%20message.png)
 
 #### Error message - over 140 characters
-!["screenshot of long tweet error message"](https://github.com/ruowent/tweeter/blob/master/image/err%20tweet%20too%20long.png)
+!["screenshot of long tweet error message"](https://github.com/ruowent/tweeter/blob/main/image/err%20tweet%20too%20long.png)
 
 
 
