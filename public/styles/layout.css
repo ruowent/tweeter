@@ -22,7 +22,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 /*
@@ -41,8 +40,9 @@ main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
   }
-  
+
   div.tweets {
     margin-top: 120px;
   }
