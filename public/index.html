@@ -52,24 +52,26 @@
             <p>Amy Mansell</p>
         </div>
       </header>
-      <section class="new-tweet">
-        <div class="hidden-error">
-          <div class="error-container">
-            <p></p>
+      <div class="tweets">
+        <section class="new-tweet">
+          <div class="hidden-error">
+            <div class="error-container">
+              <p></p>
+            </div>
           </div>
-        </div>
-        <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button class="tweet" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>  
-      <section id="tweets-container">
-        <!--client.js renders the data for the tweet bodies here--> 
-      </section>  
+          <form action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button class="tweet" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>  
+        <section id="tweets-container">
+          <!--client.js renders the data for the tweet bodies here--> 
+        </section> 
+      </div> 
     </main>
   </body>
 </html>

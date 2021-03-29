@@ -44,3 +44,9 @@ nav div i {
   font-size: 1em;
   padding: 0.1em; }
 
+/* Tablet Size */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    background-color: transparent;
+  }
+}

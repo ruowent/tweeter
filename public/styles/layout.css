@@ -33,3 +33,40 @@ main {
   left: 5%;
   right: 5%;
 }
+
+/* Desktop Size */
+/* @media (min-width: 1024px) {
+  body {
+    max-width: 1024px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+} */
+
+/* Desktop Size */
+@media only screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  div.tweets {
+    margin-top: 120px;
+  }
+}
+
+/* Tablet Size */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  main {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  div.tweets {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    position: absolute;
+  }
+}
