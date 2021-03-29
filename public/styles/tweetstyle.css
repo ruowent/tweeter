@@ -38,16 +38,6 @@ article.tweet {
   padding: .5em;
 }
 
-/* hover shadow effect */
-article.tweet:hover {
-  box-shadow: 10px 10px #c4c3c3;
-}
-
-/* hover effect */
-article.tweet:hover span {
-  opacity: 0.8;
-}
-
 /* tweet contents */
 article.tweet p {
   padding: 10px;
@@ -62,12 +52,29 @@ article.tweet footer {
   align-items: center;
 }
 
+/* hide footer icons */
 article.tweet footer div.icons {
   color: #4056A1;
+  opacity: 0;
+}
+
+/* icon spaceing */
+div.icons i {
+  margin: 0.2em;
+}
+
+/* hover shadow effect */
+article.tweet:hover {
+  box-shadow: 10px 10px #c4c3c3;
   opacity: 1;
 }
 
-/* icons on the bottom right */
-div.icons i {
-  margin: 0.2em;
+/* display icons */
+article.tweet:hover footer div.icons {
+  opacity: 1;
+}
+
+/* display handler */
+article.tweet:hover header span {
+  opacity: 1;
 }
