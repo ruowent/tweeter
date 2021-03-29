@@ -27,23 +27,39 @@ nav span {
 nav div {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
 
 /* Write a new tweet section */
 nav div p {
   align-items: flex-end;
   font-size: .7em;
-  padding: 0.5em;
 }
 
-
+div p strong {
+  font-weight: bold;
+}
 
 /* arrow icon */
-nav div i {
-  align-self: center;
+nav div a i {
   color: #DE5039;
   font-size: 1em;
   padding: 0.1em;
+}
+
+/* move arrow rule */
+@keyframes move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(10px);
+  }  
+}
+
+.moveAction {
+  animation: move 1s infinite alternate;
 }
 
 /* Tablet Size */

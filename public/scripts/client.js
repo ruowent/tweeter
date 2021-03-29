@@ -116,12 +116,20 @@ const clearError = () => {
   $('.hidden-error').slideUp();
 };
 
-
 // After html code is fully loaded, call functions to load the tweets and submit new tweets
 $(document).ready(() => {
   // Preload tweets
   loadTweets();
-  
+
+  // When down arrow on the nav bar is clicked, show or hide new tweet section
+  $('#compose a').on('click', function(e) {
+    const newTweet = $('section.new-tweet');
+    const textarea = newTweet.find('textarea');
+    newTweet.slideToggle('slow', function(){
+      textarea.focus();
+    });
+  })
+
   // Post action after submit button is clicked
   $('section.new-tweet button[type=submit]').on('click', (event) => {
     event.preventDefault();

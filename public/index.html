@@ -36,13 +36,16 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div id="writeTweet">
+      <div id="compose">
         <p><strong>Write</strong> a new tweet</p>
-        <i class="fas fa-angle-double-down"></i>
+        <a href="#"><i class="fas fa-angle-double-down moveAction"></i></a>
       </div>
     </nav>
+
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- Header -->
       <header id="main-header">
         <div>
             <img src="/images/profile-hex.png"> 
@@ -52,7 +55,10 @@
             <p><strong>Amy</strong> Mansell</p>
         </div>
       </header>
+
+      <!-- Tweet sections (New tweet and Tweets) -->
       <div class="tweets">
+
         <section class="new-tweet">
           <div class="hidden-error">
             <div class="error-container">
@@ -68,9 +74,11 @@
             </div>
           </form>
         </section>  
+
         <section id="tweets-container">
           <!--client.js renders the data for the tweet bodies here--> 
         </section> 
+
       </div> 
     </main>
   </body>
